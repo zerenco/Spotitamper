@@ -19,9 +19,9 @@
             // Disconnects once the progressbar thing is found.
             observer.disconnect();
             console.log("Found it, twisted it, scaled it and closed it. Tampermonkey. <3");
-        } else {  //If it cannot find the progressbar, let the console in F12 know. :)
-            console.error("Unable to find the progress bar element. Check the selector path. Tampermonkey <3");
-        }
+        }// else {  //If it cannot find the progressbar, let the console in F12 know. :) //comment this back in if needed.
+         //   console.error("Unable to find the progress bar element. Check the selector path. Tampermonkey <3");
+        //}
     }
 
     // Set the desired height. Spotify deafult is 4.... progressbar for ants?
