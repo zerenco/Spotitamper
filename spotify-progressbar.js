@@ -12,25 +12,16 @@
 (function() {
     'use strict';
 
-    function changeProgressBarHeight(height) {
+    const changeProgressBarHeight = (height) => {
         const progressBar = document.querySelector('[data-testid="progress-bar"]');
         if (progressBar) {
             progressBar.style.setProperty('--progress-bar-height', `${height}px`, 'important');
-            // Disconnects once the progressbar thing is found.
             observer.disconnect();
             console.log("Found it, twisted it, scaled it and closed it. Tampermonkey. <3");
-        }// else {  //If it cannot find the progressbar, let the console in F12 know. :) //comment this back in if needed.
-         //   console.error("Unable to find the progress bar element. Check the selector path. Tampermonkey <3");
-        //}
-    }
+        }
+    };
 
-    // Set the desired height. Spotify deafult is 4.... progressbar for ants?
     const desiredHeight = 18;
-
-    // Just a little info, you can use MutationObserver to detect changes in the DOM
-    const observer = new MutationObserver(() => {
-        changeProgressBarHeight(desiredHeight);
-    });
-
+    const observer = new MutationObserver(() => changeProgressBarHeight(desiredHeight));
     observer.observe(document.body, { subtree: true, childList: true });
 })();
