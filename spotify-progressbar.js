@@ -27,7 +27,7 @@
     // Set the desired height. Spotify deafult is 4.... progressbar for ants?
     const desiredHeight = 18;
 
-    // If you want to edit this, you can use MutationObserver to detect changes in the DOM
+    // Just a little info, you can use MutationObserver to detect changes in the DOM
     const observer = new MutationObserver(() => {
         changeProgressBarHeight(desiredHeight);
     });
